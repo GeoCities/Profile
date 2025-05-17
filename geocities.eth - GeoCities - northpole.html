@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>geocities.eth</title>
+    <link rel="icon" href="https://github.com/GeoCities/Ads/blob/main/Ads/Nyan%20Cat%20-%20Chris.gif?raw=true" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles with appropriate spacing */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+                    font-family: sans-serif;
+                    background-color: #A5D8FF;
+                    color: #FFFFFF;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-bar {
+            width: 90%;
+            max-width: 1200px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            justify-content: flex-start; /* Left-align the logo */
+            
+                    background-color: #A5D8FF;
+                    color: #FFFFFF;
+        }
+
+        .nav-logo {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-style: solid;
+            overflow: hidden;
+            
+                    border-color: #FFFFFF;
+                    background-color: #A5D8FF;
+                    color: #FFFFFF;
+        }
+
+        .nav-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .profile-container {
+            width: 420px;
+            max-width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px auto 80px; /* Top/bottom margins */
+            padding: 0;
+        }
+
+        .profile-header-image {
+            width: 100%;
+            height: 0;
+            padding-bottom: 33.33%;
+            border-width: 1px;
+            border-style: solid;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 0; /* No bottom margin for header */
+            
+                    border-color: #FFFFFF;
+                    background-color: #A5D8FF;
+                    color: #FFFFFF;
+        }
+
+        .profile-header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .profile-records {
+            width: 100%;
+            border-width: 1px;
+            border-style: solid;
+            box-sizing: border-box;
+            margin-top: 0; /* No top margin for records - connects to header */
+            
+                    border-color: #FFFFFF;
+                    background-color: #A5D8FF;
+                    color: #FFFFFF;
+        }
+
+        .profile-record {
+            padding: 15px;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            
+                    border-bottom-color: #FFFFFF;
+                    background-color: #A5D8FF;
+                    color: #FFFFFF;
+        }
+
+        .profile-record:last-child {
+            border-bottom: none;
+        }
+
+        .record-label {
+            font-weight: bold;
+            min-width: 100px;
+            padding-right: 10px;
+        }
+
+        .record-value {
+            flex: 1;
+            word-break: break-word;
+        }
+
+        /* Make links inherit color from parent but remain underlined */
+        .record-value a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 38px;
+            border-top-width: 1px;
+            border-top-style: solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            
+                    border-top-color: #FFFFFF;
+                    background-color: #A5D8FF;
+                    color: #FFFFFF;
+        }
+
+        .footer a {
+            color: inherit;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                width: 90%;
+            }
+        }
+        
+        /* Special effects for certain neighborhoods */
+        
+                        @keyframes snowfall {
+                            0% { transform: translateY(-100px); }
+                            100% { transform: translateY(650px); }
+                        }
+                        
+                        body::before,
+                        body::after {
+                            content: "";
+                            position: fixed;
+                            top: -10px;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-image: 
+                                radial-gradient(4px 4px at 100px 50px, #FFF 100%, transparent),
+                                radial-gradient(6px 6px at 200px 150px, #FFF 100%, transparent),
+                                radial-gradient(3px 3px at 300px 250px, #FFF 100%, transparent),
+                                radial-gradient(4px 4px at 400px 350px, #FFF 100%, transparent),
+                                radial-gradient(6px 6px at 500px 100px, #FFF 100%, transparent),
+                                radial-gradient(3px 3px at 50px 200px, #FFF 100%, transparent),
+                                radial-gradient(4px 4px at 150px 300px, #FFF 100%, transparent),
+                                radial-gradient(6px 6px at 250px 400px, #FFF 100%, transparent),
+                                radial-gradient(3px 3px at 350px 500px, #FFF 100%, transparent);
+                            background-size: 650px 650px;
+                            animation: snowfall 8s linear infinite;
+                            pointer-events: none;
+                            z-index: -1;
+                        }
+                        
+                        body::after {
+                            background-size: 750px 750px;
+                            animation: snowfall 12s linear infinite;
+                            animation-delay: 2s;
+                            opacity: 0.7;
+                        }
+    </style>
+</head>
+<body class="neighborhood-northpole" data-theme="light">
+    <nav class="nav-bar">
+        <a href="https://geocities.eth.link" class="nav-logo">
+            <img src="https://github.com/GeoCities/Ads/blob/main/Ads/Nyan%20Cat%20-%20Chris.gif?raw=true" alt="geocities.eth">
+        </a>
+    </nav>
+    
+    <div class="profile-container">
+        <div class="profile-header-image" style="display: block;"><img src="https://raw.githubusercontent.com/GeoCities/GeoCities/refs/heads/main/Assets/DFEB7E9E-1BD3-46AB-8B87-ED65E9614320.png" alt="geocities.eth header"></div>
+        <div class="profile-records">
+            <div class="profile-record"><div class="record-label">ENS</div><div class="record-value">geocities.eth</div></div><div class="profile-record"><div class="record-label">Name</div><div class="record-value">GeoCities</div></div><div class="profile-record"><div class="record-label">Followers</div><div class="record-value">243</div></div><div class="profile-record"><div class="record-label">Following</div><div class="record-value">1</div></div><div class="profile-record"><div class="record-label">Bio</div><div class="record-value">Search engine for the new internet.</div></div><div class="profile-record"><div class="record-label">Github</div><div class="record-value"><a href="https://github.com/geocities" target="_blank" rel="noopener noreferrer">geocities</a></div></div><div class="profile-record"><div class="record-label">Twitter</div><div class="record-value"><a href="https://x.com/geocities_eth" target="_blank" rel="noopener noreferrer">geocities_eth</a></div></div><div class="profile-record"><div class="record-label">Created</div><div class="record-value">02/18/2021</div></div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <a href="https://geocities.eth.link" target="_blank" rel="noopener noreferrer">GeoCities</a>
+    </footer>
+</body>
+</html>
